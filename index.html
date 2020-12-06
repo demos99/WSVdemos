@@ -33,20 +33,115 @@ Experimental results shows that our proposed method can achieve better naturalne
 <body>
 
 <h2>Demos</h2></a> 
+
 <h3>1. demos of baselines and our proposed model</h3></a>
+ "*" represents for prosodic word boundaries.
+
    <p class="sample">
-    1." Didn't you know this was the twenty-eighth of August ? "
+    1.比如*更多的*外地人*涌入*一家*城市，那*这个*城市*原来的*规矩*就*完蛋了呀。
     <blockquote>
     <table>
     <tr>
     <td align=center width=100>ground truth</td><td align=center width=100>Tacotron2</td><td align=center width=100>TPCW-GST</td><td align=center width=100>BERT-Tacotron2</td><td align=center width=100>Proposed</td>    
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
-	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>    
+    <td rowspan=2><audio src="demo/nature/10015805_01.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tacotron/10015805_01_gen.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="demo/baselines/tpcw/10015805_01_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/bert-tacotron2/10015805_01_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/proposed/10015805_01_gen.wav" controls=""></audio></td>    
+    </tr>
+    </table>
+    </blockquote>
+  </p>   
+
+   <p class="sample">
+    2.昨天*我*看到*一段话，说*应当*做*有效的*事*而不是*做*有效率的*事。这有啥*区别呢。还真有。
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Tacotron2</td><td align=center width=100>TPCW-GST</td><td align=center width=100>BERT-Tacotron2</td><td align=center width=100>Proposed</td>    
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="demo/nature/10026101_00.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tacotron/10026101_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tpcw/10026101_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/bert-tacotron2/10026101_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/proposed/10026101_00_gen.wav" controls=""></audio></td>    
+    </tr>
+    </table>
+    </blockquote>
+  </p>   
+
+
+   <p class="sample">
+    3.做*有效的*事*可能你*不擅长*但是*有结果，而做*有效率的*事*可能你*擅长*但是*没意义呀。
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Tacotron2</td><td align=center width=100>TPCW-GST</td><td align=center width=100>BERT-Tacotron2</td><td align=center width=100>Proposed</td>    
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="demo/nature/10026104_00.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tacotron/10026104_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tpcw/10026104_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/bert-tacotron2/10026104_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/proposed/10026104_00_gen.wav" controls=""></audio></td>    
+    </tr>
+    </table>
+    </blockquote>
+  </p>   
+
+
+   <p class="sample">
+    4.那*公司嘛*当然是*大批*寄送，采购*月饼*怎么*更便宜呀*寄送*怎么*更高效啊，这种*效率*导向的*事*他们会*做得*很好哒。
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Tacotron2</td><td align=center width=100>TPCW-GST</td><td align=center width=100>BERT-Tacotron2</td><td align=center width=100>Proposed</td>    
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="demo/nature/10026107_00.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tacotron/10026107_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tpcw/10026107_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/bert-tacotron2/10026107_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/proposed/10026107_00_gen.wav" controls=""></audio></td>    
+    </tr>
+    </table>
+    </blockquote>
+  </p>   
+
+   <p class="sample">
+    5.不是*嫌*月饼*便宜呀，而是*你*浓眉*大眼的*居然*一点*创意*也没有。
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Tacotron2</td><td align=center width=100>TPCW-GST</td><td align=center width=100>BERT-Tacotron2</td><td align=center width=100>Proposed</td>    
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="demo/nature/10026110_00.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tacotron/10026110_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tpcw/10026110_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/bert-tacotron2/10026110_00_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/proposed/10026110_00_gen.wav" controls=""></audio></td>    
+    </tr>
+    </table>
+    </blockquote>
+  </p>     
+
+   <p class="sample">
+    6.但是，它在*你心里*会*形成*一个*认知*屏障，让你*误以为*自己*努力啦*所以*是在*做*有效果的*事啊。
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Tacotron2</td><td align=center width=100>TPCW-GST</td><td align=center width=100>BERT-Tacotron2</td><td align=center width=100>Proposed</td>    
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="demo/nature/10026111_01.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tacotron/10026111_01_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/tpcw/10026111_01_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/baselines/bert-tacotron2/10026111_01_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/proposed/10026111_01_gen.wav" controls=""></audio></td>    
     </tr>
     </table>
     </blockquote>
@@ -60,17 +155,18 @@ Experimental results shows that our proposed method can achieve better naturalne
 <h2>ablation studies</h2></a>
 <h3>1. Comparisons of using different inputs in the WSV predictor</h3></a>
    <p class="sample">
-    1." Didn't you know this was the twenty-eighth of August ? "
+    哎*要回答*这个*问题*就得*知道，我们的*那些*规矩*到底是*干什么*用的。
     <blockquote>
     <table>
     <tr>
     <td align=center width=100>ground truth</td><td align=center width=100>Proposed</td><td align=center width=100>-text</td><td align=center width=100>-phoneme</td> 
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/1/10015801_01.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/1/10015801_01_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/1/10015801_01_gen-text.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/1/10015801_01_gen-phoneme.wav" controls=""></audio></td>
+ 
  
     </tr>
     </table>
@@ -79,16 +175,16 @@ Experimental results shows that our proposed method can achieve better naturalne
 
 <h3>2. The guidance of the synthesizer when training the WSV predictor</h3></a>
    <p class="sample">
-    1." Didn't you know this was the twenty-eighth of August ? "
+    但是，它在*你心里*会*形成*一个*认知*屏障，让你*误以为*自己*努力啦*所以*是在*做*有效果的*事啊。
     <blockquote>
     <table>
     <tr>
     <td align=center width=100>ground truth</td><td align=center width=100>Proposed</td><td align=center width=100>-GS</td>
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/nature/10026111_01.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/2/10026111_01_gen_joint.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/2/10026111_01_gen_separ.wav" controls=""></audio></td>
  
     </tr>
     </table>
@@ -97,16 +193,16 @@ Experimental results shows that our proposed method can achieve better naturalne
 
 <h3>3. The effect of Gumbel softmax</h3></a>
    <p class="sample">
-    1." Didn't you know this was the twenty-eighth of August ? "
+    哎*要回答*这个*问题*就得*知道，我们的*那些*规矩*到底是*干什么*用的。
     <blockquote>
     <table>
     <tr>
     <td align=center width=100>ground truth</td><td align=center width=100>Proposed</td><td align=center width=100>-Gumbel</td>
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/3/10015801_01.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/3/10015801_01_gen.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/3/10026111_01_gen_nogumbel.wav" controls=""></audio></td>
  
     </tr>
     </table>
@@ -115,16 +211,16 @@ Experimental results shows that our proposed method can achieve better naturalne
 
 <h3>4. Comparison between fine-grained and utterance-level style representations</h3></a>
    <p class="sample">
-    1." Didn't you know this was the twenty-eighth of August ? "
+    所以呀，如果*我们*要做*一个*既守*规矩*又*不死守*规矩的*人。
     <blockquote>
     <table>
     <tr>
     <td align=center width=100>ground truth</td><td align=center width=100>Proposed-Gumbel-text</td><td align=center width=100>TPCW-GST</td>
     </tr>
     <tr>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
-    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/4/10015806_00.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/4/10015806_00_gen_proposed.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="demo/ablation/4/10015806_00_gen_tpcw.wav" controls=""></audio></td>
  
     </tr>
     </table>
