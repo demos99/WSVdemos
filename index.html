@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<article>
+  <header>
+	<h1>Extracting and Predicting Word-Level Style Variations for Speech Synthesis</h1>
+  </header>
+</article>
+
+<p><b>Authors:</b> Ya-Jie Zhang, Zhen-Hua Ling </p>
+
+<div><b>Abstract:</b> This paper proposes a speech synthesis method based on unsupervisedly-learned fine-grained style representations, named word-level style variations (WSVs).
+The whole model contains a WSV extractor and a WSV predictor.
+The WSV extractor is jointly trained with a sequence-to-sequence (Seq2seq) synthesizer and learns a WSV vector from the mel-spectrogram of each prosodic word in the training set by extending the global style token (GST) framework.
+In contrast to GST weights which describe the global styles of utterances, WSVs operate at word-level and are expected to describe local style properties, such as stresses.
+Besides, Gumbel softmax is adopted  and the extracted WSVs are close to one-hot vectors which facilitate the subsequent prediction task.
+The WSV predictor generates the sequence of WSV vectors from input text using an autoregressive LSTM network.
+In addition to phonetic information, e.g., phoneme sequences,
+Bidirectional Encoder Representation from Transformers (BERT) model is employed by the predictor to obtain the semantic descriptions of input text for better predicting the latent speech representation, i.e. WSVs.
+The WSV predictor is trained by considering both the accuracy of WSV prediction and the distortion of mel-spectrograms recovered from the predicted WSVs.
+Experimental results shows that our proposed method can achieve better naturalness of synthetic speech than baseline Tacotron2, text-predicted global style token (TP-GST) and BERT-Tacotron2 models.
+
+</div>
+
+<p><b>Paper link:</b> </p>
+
+
+<head>
+<meta charset="UTF-8">
+<title>Speech Demo</title>
+</head>
+
+<body>
+
+<h2>Demos</h2></a> 
+<h3>1. demos of baselines and our proposed model</h3></a>
+   <p class="sample">
+    1." Didn't you know this was the twenty-eighth of August ? "
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Tacotron2</td><td align=center width=100>TPCW-GST</td><td align=center width=100>BERT-Tacotron2</td><td align=center width=100>Proposed</td>    
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
+	<td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>    
+    </tr>
+    </table>
+    </blockquote>
+  </p>   
+
+  
+ </body>
+</html>
+
+
+<h2>ablation studies</h2></a>
+<h3>1. Comparisons of using different inputs in the WSV predictor</h3></a>
+   <p class="sample">
+    1." Didn't you know this was the twenty-eighth of August ? "
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Proposed</td><td align=center width=100>-text</td><td align=center width=100>-phoneme</td> 
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+ 
+    </tr>
+    </table>
+    </blockquote>
+  </p>   
+
+<h3>2. The guidance of the synthesizer when training the WSV predictor</h3></a>
+   <p class="sample">
+    1." Didn't you know this was the twenty-eighth of August ? "
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Proposed</td><td align=center width=100>-GS</td>
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+ 
+    </tr>
+    </table>
+    </blockquote>
+  </p>   
+
+<h3>3. The effect of Gumbel softmax</h3></a>
+   <p class="sample">
+    1." Didn't you know this was the twenty-eighth of August ? "
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Proposed</td><td align=center width=100>-Gumbel</td>
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+ 
+    </tr>
+    </table>
+    </blockquote>
+  </p> 
+
+<h3>4. Comparison between fine-grained and utterance-level style representations</h3></a>
+   <p class="sample">
+    1." Didn't you know this was the twenty-eighth of August ? "
+    <blockquote>
+    <table>
+    <tr>
+    <td align=center width=100>ground truth</td><td align=center width=100>Proposed-Gumbel-text</td><td align=center width=100>TPCW-GST</td>
+    </tr>
+    <tr>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/ref/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/baseline/03.wav" controls=""></audio></td>
+    <td rowspan=2><audio src="http://home.ustc.edu.cn/~zyj008/ICASSP2019/audio/style_transfer/parallel/vae/03.wav" controls=""></audio></td>
+ 
+    </tr>
+    </table>
+    </blockquote>
+  </p>
+
+
+
+
+  
+ </body>
+</html>
+
+
+
+
+
+
